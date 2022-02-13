@@ -1,4 +1,4 @@
-import SavingItem from './components/SavingItem';
+import Savings from './components/Savings';
 
 function App() {
 	const savings = [
@@ -36,32 +36,7 @@ function App() {
 	return (
 		<div>
 			<h1>Track your savings</h1>
-			{/* <SavingItem props={savings} /> */}
-			<SavingItem
-				title={savings[0].title}
-				amount={savings[0].amount}
-				date={savings[0].date}
-			/>
-			<SavingItem
-				title={savings[1].title}
-				amount={savings[1].amount}
-				date={savings[1].date}
-			/>
-			<SavingItem
-				title={savings[2].title}
-				amount={savings[2].amount}
-				date={savings[2].date}
-			/>
-			<SavingItem
-				title={savings[3].title}
-				amount={savings[3].amount}
-				date={savings[3].date}
-			/>
-			<SavingItem
-				title={savings[4].title}
-				amount={savings[4].amount}
-				date={savings[4].date}
-			/>
+			<Savings savings={savings} />
 		</div>
 	);
 }
