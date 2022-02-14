@@ -1,4 +1,7 @@
+import React from 'react';
+
 import './SavingItem.css';
+import Card from '../UI/Card';
 import SavingDate from './SavingDate';
 
 function SavingItem(props) {
@@ -9,14 +12,14 @@ function SavingItem(props) {
 	// const savingAmountHardcoded = 3.25;
 
 	return (
-		<div className='saving-item'>
+		<Card className='saving-item'>
 			{/* <div>{savingDate}</div> */}
 			<SavingDate date={savingDate} />
 			<div className='saving-item__description'>
 				<h2>{savingTitle}</h2>
 				<div className='saving-item__price'>{savingAmount} zł</div>
 			</div>
-		</div>
+		</Card>
 	);
 }
 

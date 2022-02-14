@@ -1,9 +1,12 @@
+import React from 'react';
+
 import './Savings.css';
 import SavingItem from './SavingItem';
+import Card from '../UI/Card';
 
 function Savings(props) {
 	return (
-		<div className='savings'>
+		<Card className='savings'>
 			<SavingItem
 				title={props.savings[0].title}
 				amount={props.savings[0].amount}
@@ -29,7 +32,7 @@ function Savings(props) {
 				amount={props.savings[4].amount}
 				date={props.savings[4].date}
 			/>
-		</div>
+		</Card>
 	);
 }
 

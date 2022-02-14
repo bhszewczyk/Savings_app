@@ -1,4 +1,4 @@
-import Savings from './components/Savings';
+import Savings from './components/Savings/Savings';
 
 function App() {
 	const savings = [

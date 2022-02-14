@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './SavingDate.css';
 
 function SavingDate(props) {
