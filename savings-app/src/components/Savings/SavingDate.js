@@ -3,7 +3,7 @@ import React from 'react';
 import './SavingDate.css';
 
 function SavingDate(props) {
-	console.log(props);
+	// console.log(props);
 	const day = props.date.toLocaleString('en-GB', { day: '2-digit' });
 	const month = props.date.toLocaleString('en-GB', { month: 'short' });
 	const year = props.date.getFullYear();
