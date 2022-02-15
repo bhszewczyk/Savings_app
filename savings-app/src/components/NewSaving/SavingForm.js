@@ -37,7 +37,7 @@ function SavingForm(props) {
 		<form onSubmit={submitHandler}>
 			<div className='new-saving__controls'>
 				<div className='new-saving__control'>
-					<label>Expanse Title</label>
+					<label>Expense Title</label>
 					<input
 						type='text'
 						value={enteredTitle}
