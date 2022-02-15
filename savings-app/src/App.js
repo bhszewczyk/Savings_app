@@ -1,4 +1,5 @@
 import Savings from './components/Savings/Savings';
+import NewSaving from './components/NewSaving/NewSaving';
 
 function App() {
 	const savings = [
@@ -33,9 +34,16 @@ function App() {
 			date: new Date(2021, 9, 21),
 		},
 	];
+
+	const addSavingHandler = (saving) => {
+		console.log('In App.js');
+		console.log(saving);
+	};
+
 	return (
 		<div>
 			<h1>Track your savings</h1>
+			<NewSaving onAddSaving={addSavingHandler} />
 			<Savings savings={savings} />
 		</div>
 	);
