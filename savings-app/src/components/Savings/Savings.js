@@ -7,32 +7,41 @@ import SavingFilter from './SavingsFilter';
 
 function Savings(props) {
 	const [choosenYear, setEnteredYear] = useState('');
-	const [selectedYearSaving, filterArrayForYear] = useState(props.savings);
-	// console.log(selectedYearSaving);
 
 	const filterHandler = (selectedYear) => {
-		// console.log(selectedYear);
+		console.log(selectedYear);
 		setEnteredYear(selectedYear);
-		// console.log(props.savings);
-		const yearSavings = props.savings.filter((saving) => {
-			return saving.date.getFullYear().toString() === selectedYear;
-		});
-		// console.log(yearSavings);
-		filterArrayForYear(yearSavings);
 	};
 
 	return (
 		<div>
 			<Card className='savings'>
 				<SavingFilter selection={choosenYear} onFilter={filterHandler} />
-				{selectedYearSaving.map((saving) => (
-					<SavingItem
-						key={saving.id}
-						title={saving.title}
-						amount={saving.amount}
-						date={saving.date}
-					></SavingItem>
-				))}
+				<SavingItem
+					title={props.savings[0].title}
+					amount={props.savings[0].amount}
+					date={props.savings[0].date}
+				/>
+				<SavingItem
+					title={props.savings[1].title}
+					amount={props.savings[1].amount}
+					date={props.savings[1].date}
+				/>
+				<SavingItem
+					title={props.savings[2].title}
+					amount={props.savings[2].amount}
+					date={props.savings[2].date}
+				/>
+				<SavingItem
+					title={props.savings[3].title}
+					amount={props.savings[3].amount}
+					date={props.savings[3].date}
+				/>
+				<SavingItem
+					title={props.savings[4].title}
+					amount={props.savings[4].amount}
+					date={props.savings[4].date}
+				/>
 			</Card>
 		</div>
 	);
