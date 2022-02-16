@@ -4,6 +4,7 @@ import './Savings.css';
 import SavingsList from './SavingsList';
 import Card from '../UI/Card';
 import SavingFilter from './SavingsFilter';
+import SavingsChart from './SavingsChart';
 
 function Savings(props) {
 	const [choosenYear, setEnteredYear] = useState('');
@@ -13,7 +14,7 @@ function Savings(props) {
 	});
 
 	const filterHandler = (selectedYear) => {
-		console.log(selectedYear);
+		// console.log(selectedYear);
 		setEnteredYear(selectedYear);
 	};
 
@@ -21,6 +22,7 @@ function Savings(props) {
 		<div>
 			<Card className='savings'>
 				<SavingFilter selection={choosenYear} onFilter={filterHandler} />
+				<SavingsChart savings={yearSavings} />
 				<SavingsList items={yearSavings} />
 			</Card>
 		</div>
