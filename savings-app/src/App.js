@@ -92,7 +92,7 @@ function App() {
 
 	return (
 		<div>
-			<h1>Track your savings</h1>
+			{/* <h1>Track your savings</h1> */}
 			<NewSaving onAddSaving={addSavingHandler} />
 			<Savings savings={expenses} />
 		</div>
