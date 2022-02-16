@@ -18,6 +18,12 @@ function SavingForm(props) {
 		setEnteredDate(e.target.value);
 	};
 
+	const [isEditing, setEditing] = useState(false);
+
+	const editHandler = () => {
+		setEditing(true);
+	};
+
 	const submitHandler = (e) => {
 		e.preventDefault();
 
@@ -31,45 +37,56 @@ function SavingForm(props) {
 		setEnteredTitle('');
 		setEnteredAmount('');
 		setEnteredDate('');
+
+		setEditing(false);
 	};
 
-	return (
-		<form onSubmit={submitHandler}>
-			<div className='new-saving__controls'>
-				<div className='new-saving__control'>
-					<label>Expense Title</label>
-					<input
-						type='text'
-						value={enteredTitle}
-						onChange={titleChangeHandler}
-					/>
+	let content = <button onClick={editHandler}>Add saving</button>;
+
+	if (isEditing) {
+		content = (
+			<form onSubmit={submitHandler}>
+				<div className='new-saving__controls'>
+					<div className='new-saving__control'>
+						<label>Expense Title</label>
+						<input
+							type='text'
+							value={enteredTitle}
+							onChange={titleChangeHandler}
+						/>
+					</div>
+					<div className='new-saving__control'>
+						<label>Amount</label>
+						<input
+							type='number'
+							min='0.01'
+							step='0.01'
+							value={enteredAmount}
+							onChange={amountChangeHandler}
+						/>
+					</div>
+					<div className='new-saving__control'>
+						<label>Date</label>
+						<input
+							type='date'
+							min='2018-01-01'
+							step='2023-12-31'
+							value={enteredDate}
+							onChange={dateChangeHandler}
+						/>
+					</div>
 				</div>
-				<div className='new-saving__control'>
-					<label>Amount</label>
-					<input
-						type='number'
-						min='0.01'
-						step='0.01'
-						value={enteredAmount}
-						onChange={amountChangeHandler}
-					/>
+				<div className='new-saving__actions'>
+					<button onClick={setEditing}>Cancel</button>
+					<button type='submit' onClick={setEditing}>
+						Add Saving
+					</button>
 				</div>
-				<div className='new-saving__control'>
-					<label>Date</label>
-					<input
-						type='date'
-						min='2018-01-01'
-						step='2023-12-31'
-						value={enteredDate}
-						onChange={dateChangeHandler}
-					/>
-				</div>
-			</div>
-			<div className='new-saving__actions'>
-				<button type='submit'>Add Saving</button>
-			</div>
-		</form>
-	);
+			</form>
+		);
+	}
+
+	return <div>{content}</div>;
 }
 
 export default SavingForm;

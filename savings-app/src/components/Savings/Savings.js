@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
 import './Savings.css';
-import SavingItem from './SavingItem';
+import SavingsList from './SavingsList';
 import Card from '../UI/Card';
 import SavingFilter from './SavingsFilter';
 
 function Savings(props) {
-	const [choosenYear, setEnteredYear] = useState('2022');
-	console.log(choosenYear);
+	const [choosenYear, setEnteredYear] = useState('');
 
 	const yearSavings = props.savings.filter((saving) => {
 		return saving.date.getFullYear().toString() === choosenYear;
@@ -22,14 +21,7 @@ function Savings(props) {
 		<div>
 			<Card className='savings'>
 				<SavingFilter selection={choosenYear} onFilter={filterHandler} />
-				{yearSavings.map((saving) => (
-					<SavingItem
-						key={saving.id}
-						title={saving.title}
-						amount={saving.amount}
-						date={saving.date}
-					></SavingItem>
-				))}
+				<SavingsList items={yearSavings} />
 			</Card>
 		</div>
 	);

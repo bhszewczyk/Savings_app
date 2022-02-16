@@ -44,7 +44,7 @@ const DUMMY_EXPENSES = [
 
 function App() {
 	const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-	console.log(expenses);
+	// console.log(expenses);
 
 	const addSavingHandler = (expense) => {
 		console.log('In App.js');

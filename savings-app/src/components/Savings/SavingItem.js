@@ -18,15 +18,17 @@ function SavingItem(props) {
 	// };
 
 	return (
-		<Card className='saving-item'>
-			{/* <div>{savingDate}</div> */}
-			<SavingDate date={savingDate} />
-			<div className='saving-item__description'>
-				<h2>{savingTitle}</h2>
-				<div className='saving-item__price'>{savingAmount} zł</div>
-			</div>
-			{/* <button onClick={clickBtnHandler}>Edit</button> */}
-		</Card>
+		<li>
+			<Card className='saving-item'>
+				{/* <div>{savingDate}</div> */}
+				<SavingDate date={savingDate} />
+				<div className='saving-item__description'>
+					<h2>{savingTitle}</h2>
+					<div className='saving-item__price'>{savingAmount} zł</div>
+				</div>
+				{/* <button onClick={clickBtnHandler}>Edit</button> */}
+			</Card>
+		</li>
 	);
 }
 

@@ -1,0 +1,9 @@
+.savings-list {
+	list-style: none;
+	padding: 0;
+}
+
+.savings-list__fallback {
+	color: white;
+	text-align: center;
+}
